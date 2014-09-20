@@ -21,9 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # apache
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  # apt-cacher-ng running on the host as an apt proxy
   config.vm.network "private_network", type: "dhcp"
 
   # Create a public network, which generally matched to bridged network.
