@@ -37,3 +37,4 @@ requires 'Text::WikiFormat' => 0;
 requires 'Text::xSV' => 0;
 requires 'Wiki::Toolkit' => 0;
 requires 'XML::Atom' => 0;
+requires 'Imager' => 0;

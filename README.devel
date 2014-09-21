@@ -72,17 +72,6 @@ cd ~
 cp /vagrant/cpanfile .
 cpanm --sudo --installdeps .
 
-cpanm --sudo --look Imager
-vi Imager.xs
-# remove "|| type == SVt_REGEXP" in Imager.xs[im_SvREFSCALAR] return value,
-# it wasn't implemented in perl 5.10 yet.
-perl Makefile.PL
-make
-# last test in t/200-file/010-iolayer.t fails, so skipping tests
-#make test
-make install
-exit
-
 # Act, finally...
 git clone https://github.com/book/Act.git ~/act
 cd ~/act
