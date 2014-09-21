@@ -53,14 +53,16 @@ wget --no-check-certificate http://cpanmin.us -O cpanm
 chmod a+x cpanm
 sudo mv cpanm /usr/local/bin
 
-# t/response/TestMore/testpm.pm needs to setup $0 in order for tests to pass:
+# t/response/TestMore/testpm.pm needs to setup $0 in order for tests to pass.
+# You can install without testing or add this block in testpm.pm:
 # BEGIN { my $file = __FILE__; *0 = \$file }
 cpanm --notest Apache::Test
 
 cd ../libapreq-1.34
 perl Makefile.PL
 make
-# t/response/TestApReq/big_input.pm needs to setup $0 in order for tests to pass:
+# t/response/TestApReq/big_input.pm needs to setup $0 in order for tests to pass.
+# You can install without testing or add this block in big_input.pm:
 # BEGIN { my $file = __FILE__; *0 = \$file }
 #make test
 make install
