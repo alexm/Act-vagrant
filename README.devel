@@ -15,10 +15,11 @@ sudo sed -i -e 's,http://[^ ]*,mirror://mirrors.ubuntu.com/mirrors.txt,' /etc/ap
 sudo apt-get update
 sudo apt-get install vim build-essential libgdbm-dev libperl-dev libgmp3-dev libfreetype6-dev libgif-dev libjpeg62-dev libpng3-dev libtiff4-dev libpq-dev libt1-dev
 
-# postfix doesn't like the default $myhostname
-sudo apt-get install postfix || true
-sudo sed -i -e 's,\$myhostname = lucid32.*,\$myhostname = localhost.localdomain,' /etc/postfix/main.cf
-sudo apt-get install postfix || true
+# FQDN should not end with a dot
+sudo sed -i -e 's,comcast\.net\.,comcast.net,' /etc/hosts
+
+# select local only
+sudo apt-get install postfix
 
 # postgresql must initialize with UTF8, a reboot is needed :(
 # /etc/default/locale => LANG="en_US.UTF8"
