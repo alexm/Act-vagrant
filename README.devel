@@ -67,47 +67,10 @@ make
 #make test
 sudo make install
 
-git clone https://github.com/book/Act.git ~/act
-cd ~/act
-cpanm Module::Install \
-Apache::AuthCookie \
-Apache::Cookie \
-Apache::Request \
-AppConfig \
-Clone \
-DBI \
-DBD::Pg \
-Data::ICal \
-Data::ICal::DateTime \
-Data::ICal::TimeZone \
-DateTime::Format::Pg \
-DateTime::Locale \
-DateTime::TimeZone \
-DateTime \
-Digest::HMAC_SHA1 \
-Email::Address \
-Email::Date \
-Email::MessageID \
-Email::Send \
-Email::Send::Sendmail \
-Email::Simple::Creator \
-Email::Simple \
-Email::Valid \
-Flickr::API \
-HTML::TagCloud \
-JSON::XS \
-List::Pairwise \
-Locale::Maketext::Lexicon \
-Net::OpenID::Server \
-Pod::POM \
-Template \
-Template::Multilingual::Parser \
-Test::MockObject \
-Text::Diff \
-Text::WikiFormat \
-Text::xSV \
-Wiki::Toolkit \
-XML::Atom
+# install Act reqs from ~/cpanfile
+cd ~
+cp /vagrant/cpanfile .
+cpanm --sudo --installdeps .
 
 cpanm --sudo --look Imager
 vi Imager.xs
@@ -121,6 +84,8 @@ make install
 exit
 
 # Act, finally...
+git clone https://github.com/book/Act.git ~/act
+cd ~/act
 perl Makefile.PL
 make
 export ACTHOME=$PWD
