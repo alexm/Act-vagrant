@@ -13,7 +13,7 @@ set -e
 
 sudo sed -i -e 's,http://[^ ]*,mirror://mirrors.ubuntu.com/mirrors.txt,' /etc/apt/sources.list
 sudo apt-get update
-sudo apt-get install vim build-essential libgdbm-dev libperl-dev libgmp3-dev libfreetype6-dev libgif-dev libjpeg62-dev libpng3-dev libtiff4-dev libpq-dev libt1-dev
+sudo apt-get install vim build-essential libgdbm-dev libperl-dev libgmp3-dev libfreetype6-dev libgif-dev libjpeg62-dev libpng3-dev libtiff4-dev libpq-dev libt1-dev git-core
 
 # FQDN should not end with a dot
 sudo sed -i -e 's,comcast\.net\.,comcast.net,' /etc/hosts
