@@ -14,3 +14,8 @@ You can use this project to report any issues for that box too.
 Take a loot at README.devel if you need the details for manually
 install instructions of Act. But be careful, they have to be
 used as a guideline, YMMV.
+
+References
+----------
+
+*   http://act.mongueurs.net/doc/Manual/Developer/Installation.html
