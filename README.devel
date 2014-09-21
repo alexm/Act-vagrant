@@ -65,7 +65,7 @@ make
 # You can install without testing or add this block in big_input.pm:
 # BEGIN { my $file = __FILE__; *0 = \$file }
 #make test
-make install
+sudo make install
 
 git clone https://github.com/book/Act.git ~/act
 cd ~/act
