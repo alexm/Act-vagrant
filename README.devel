@@ -35,9 +35,10 @@ tar xf libapreq-1.34.tar.gz
 
 patch -p0 < apache_1.3.42.patch
 
-cd mod_perl-1.31
-# /bin/sh needs to be bash
+# mod_perl needs /bin/sh to be bash
 sudo ln -snf bash /bin/sh
+
+cd mod_perl-1.31
 perl Makefile.PL APACHE_SRC=../apache_1.3.42/src DO_HTTPD=1 USE_APACI=1 EVERYTHING=1 APACI_ARGS=--enable-module=so
 make
 make test
