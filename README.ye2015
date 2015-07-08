@@ -1,0 +1,39 @@
+How to run a local instance of an Act conference
+================================================
+
+Quick steps to get a clone of ye2015 running locally:
+
+    vagrant init alexm/Act
+    perl -i -pe 's|# config.vm.network "forwarded_port", guest: 80, host: 8080|config.vm.network "forwarded_port", guest: 8080, host: 8080|' Vagrantfile
+    vagrant up --provider virtualbox
+    vagrant ssh
+
+        git clone https://github.com/Act-Conferences/ye2015.git
+        ln -s ~/ye2015/actdocs ~/Act/actdocs/ye2015
+        ln -s ~/ye2015/wwwdocs ~/Act/wwwdocs/ye2015
+        perl -i -pe 's|^(conferences = .*)|$1 ye2015|' ~/Act/conf/act.ini
+        httpd -f ~/Act/httpd.conf
+
+Then you should open http://localhost:8080/ye2105/ and see the
+Granada instance on your computer.
+
+The last step is to register user vagrant for the conference and
+make then grant them admin rights:
+
+    vagrant ssh
+
+        ~/Act/bin/gengrant vagrant
+        ~/Act/bin/grant_rights admin to vagrant on ye2015
+
+Now you can login as user vagrant and password vagrant. Find the
+rights administration page under the Users menu.
+
+If you change the Act config and/or pages, probably you'll need
+to restart apache:
+
+    vagrant ssh
+
+        pkill httpd
+        httpd -f ~/Act/httpd.conf
+
+That's all.
