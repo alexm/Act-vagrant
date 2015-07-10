@@ -14,7 +14,7 @@ Quick steps to get a clone of ye2015 running locally:
         perl -i -pe 's|^(conferences = .*)|$1 ye2015|' ~/Act/conf/act.ini
         httpd -f ~/Act/httpd.conf
 
-Then you should open http://localhost:8080/ye2105/ and see the
+Then you should open http://localhost:8080/ye2015/ and see the
 Granada instance on your computer.
 
 The last step is to register user vagrant for the conference and
