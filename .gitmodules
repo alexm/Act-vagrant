@@ -1,6 +1,3 @@
-[submodule "Act"]
-	path = Act
-	url = https://github.com/book/Act.git
 [submodule "puppet/modules/apt"]
 	path = puppet/modules/apt
 	url = https://github.com/puppetlabs/puppetlabs-apt.git
