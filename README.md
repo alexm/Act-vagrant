@@ -11,9 +11,9 @@ use a vagrant box that I managed to build manually. See
 
 You can use this project to report any issues for that box too.
 
-Take a look at README.devel if you need the details for manually
-install instructions of Act. But be careful, they have to be
-used as a guideline, YMMV.
+Take a look at [the developer notes](README.devel)
+if you need the details for manually install instructions of Act.
+But be careful, they have to be used as a guideline, YMMV.
 
 References
 ----------
